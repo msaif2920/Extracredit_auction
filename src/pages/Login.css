@@ -1,0 +1,13 @@
+.login__page {
+  align-items: center;
+  margin-left: 30vw;
+  margin-top: 100px;
+}
+
+.input__size {
+  width: 30vw;
+}
+
+.span__text {
+  color: red;
+}

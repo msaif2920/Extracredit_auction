@@ -1,0 +1,13 @@
+.navbar {
+  background-color: #ff7b54;
+}
+
+.navbar-brand > .navbar-item {
+  color: white;
+  font-size: 30px;
+}
+
+.navbar-end > .navbar-item {
+  color: white;
+  font-size: medium;
+}

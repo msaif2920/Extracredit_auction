@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./pages/Navbar";
+import SearchPage from "./pages/SearchPage";
+import Login from "./pages/Login";
+import SearchResult from "./pages/SearchResult";
+import ListingDetail from "./pages/ListingDetail.js";
+import CreateListing from "./pages/CreateListing.js";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const tokenItem = window.localStorage.getItem("Bearer");
+  const [token, setToken] = useState(tokenItem);
+
+  const logout = (e) => (e) => {
+    console.log(e);
+  };
+
+  const login = (e) => (e) => {
+    console.log("HERE");
+    console.log(e);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <>
+          <Navbar onLogOut={setToken} />
+          {!token ? (
+            <Route path="/" exact component={Login} />
+          ) : (
+            <Route path="/" exact component={SearchPage} />
+          )}
+          <Route path="/result" component={SearchResult} />
+          <Route path="/ListingDetail" component={ListingDetail} />
+          <Route path="/createListing" component={CreateListing} />
+        </>
+      </Switch>
+    </Router>
   );
 }
 

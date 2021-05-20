@@ -1,0 +1,41 @@
+.search__input {
+  text-align: center;
+}
+
+.suggestion__header {
+  text-align: center;
+  margin: 50px;
+  font-size: x-large;
+  font-family: "Raleway", sans-serif;
+}
+
+.search__input > input {
+  width: 30vw;
+  margin-top: 50px;
+  height: 50px;
+  border-radius: 20px;
+  outline-width: 0;
+  border: 1px solid #f77754;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.category__text {
+  font-size: medium;
+  margin-top: 50px;
+}
+
+.search__suggestion {
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+.search__categories {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search__result {
+  display: flex;
+  flex-wrap: wrap;
+}
